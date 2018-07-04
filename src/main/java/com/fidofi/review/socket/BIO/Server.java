@@ -13,6 +13,7 @@ import java.util.concurrent.Executors;
 @Slf4j
 public class Server {
   private static final Integer PORT = 8082;
+  private static ExecutorService executorService = Executors.newFixedThreadPool(10);
 
   public static synchronized void start() {
     try {
@@ -21,9 +22,8 @@ public class Server {
       while (true) {
         Socket socket = serverSocket.accept(); // 阻塞监听
         // 若成功监听，则新启动一个线程处理
-        //        ExecutorService executorService = Executors.newFixedThreadPool(10);
-        //        executorService.execute(new Thread(new ServerHandler(socket)));
-        new Thread(new ServerHandler(socket)).start();
+        executorService.execute(new Thread(new ServerHandler(socket)));
+        //        new Thread(new ServerHandler(socket)).start();
       }
     } catch (IOException e) {
       e.printStackTrace();

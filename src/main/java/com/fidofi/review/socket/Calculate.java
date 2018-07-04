@@ -1,4 +1,4 @@
-package com.fidofi.review.socket.BIO;
+package com.fidofi.review.socket;
 
 import java.util.Stack;
 
