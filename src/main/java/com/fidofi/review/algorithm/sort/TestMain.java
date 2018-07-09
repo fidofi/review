@@ -3,6 +3,8 @@ package com.fidofi.review.algorithm.sort;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.SQLOutput;
+
 /** @Auther: fido @Date: 2018/7/8 10:46 @Description:测试排序方法 */
 public class TestMain {
   private int[] target = ArrayUtils.getRandomArray(10);
@@ -32,5 +34,12 @@ public class TestMain {
     InsertionSort insertionSort = new InsertionSort();
     System.out.println("排序后的数组");
     ArrayUtils.printArray(insertionSort.sort(target));
+  }
+
+  @Test
+  public void testQuickSort() {
+    QuickSort quickSort = new QuickSort();
+    System.out.println("快速排序后的数组");
+    ArrayUtils.printArray(quickSort.sort(target));
   }
 }
