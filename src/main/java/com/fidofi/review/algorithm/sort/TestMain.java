@@ -42,4 +42,11 @@ public class TestMain {
     System.out.println("快速排序后的数组");
     ArrayUtils.printArray(quickSort.sort(target));
   }
+
+  @Test
+  public void testHeapSort() {
+    HeapSort heapSort = new HeapSort();
+    System.out.println("堆排序后的数组");
+    ArrayUtils.printArray(heapSort.sort(target));
+  }
 }
